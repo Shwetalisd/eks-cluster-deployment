@@ -3,6 +3,10 @@ data "aws_subnets" "available-subnets" {
     name   = "vpc-id"
     values = ["vpc-0d9517a047a515a39"] # replace with your VPC ID
   }
+ filter {
+    name   = "tag:Tier"
+    values = ["private"]
+  }
 }
 resource "aws_eks_cluster" "project-cluster" {
   name     = "project-cluster"
