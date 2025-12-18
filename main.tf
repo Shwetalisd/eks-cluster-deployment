@@ -1,6 +1,6 @@
 data "aws_subnets" "available-subnets" {
   filter {
-    name   = "vpc-id"
+    name   = "project-vpc"
     values = ["vpc-003abfd54fcf57cbd"] # replace with your VPC ID
   }
 }
