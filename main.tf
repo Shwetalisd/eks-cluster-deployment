@@ -1,7 +1,7 @@
 data "aws_subnets" "available-subnets" {
   filter {
     name   = "vpc-id"
-    values = ["vpc-003abfd54fcf57cbd"] # replace with your VPC ID
+    values = ["vpc-0d9517a047a515a39"] # replace with your VPC ID
   }
 }
 resource "aws_eks_cluster" "project-cluster" {
