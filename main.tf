@@ -1,10 +1,9 @@
-data "aws_subnets" "available-subnets"{
-    filter {
-        name = "tag:Name"
-        values = ["Our-Public-*"]
-    }
+data "aws_subnets" "available-subnets" {
+  filter {
+    name   = "vpc-id"
+    values = ["vpc-003abfd54fcf57cbd"] # replace with your VPC ID
+  }
 }
-
 resource "aws_eks_cluster" "project-cluster" {
   name     = "project-cluster"
   role_arn = aws_iam_role.example.arn
